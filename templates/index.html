@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" style="border-style: none;border-color: rgb(231,231,231);">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Sunhack UI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <style>
+        .bs-icon {
+            --bs-icon-size: .75rem;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+            font-size: var(--bs-icon-size);
+            width: calc(var(--bs-icon-size) * 2);
+            height: calc(var(--bs-icon-size) * 2);
+            color: var(--bs-primary);
+          }
+          
+          .bs-icon-xs {
+            --bs-icon-size: 1rem;
+            width: calc(var(--bs-icon-size) * 1.5);
+            height: calc(var(--bs-icon-size) * 1.5);
+          }
+          
+          .bs-icon-sm {
+            --bs-icon-size: 1rem;
+          }
+          
+          .bs-icon-md {
+            --bs-icon-size: 1.5rem;
+          }
+          
+          .bs-icon-lg {
+            --bs-icon-size: 2rem;
+          }
+          
+          .bs-icon-xl {
+            --bs-icon-size: 2.5rem;
+          }
+          
+          .bs-icon.bs-icon-primary {
+            color: var(--bs-white);
+            background: var(--bs-primary);
+          }
+          
+          .bs-icon.bs-icon-primary-light {
+            color: var(--bs-primary);
+            background: rgba(var(--bs-primary-rgb), .2);
+          }
+          
+          .bs-icon.bs-icon-semi-white {
+            color: var(--bs-primary);
+            background: rgba(255, 255, 255, .5);
+          }
+          
+          .bs-icon.bs-icon-rounded {
+            border-radius: .5rem;
+          }
+          
+          .bs-icon.bs-icon-circle {
+            border-radius: 50%;
+          }
+          
+          .dropdown-menu {
+            background-color: black;
+            width: 100%;
+            color: white !impotant;
+          }
+          
+          a {
+            color: white;
+          }
+          
+          .dropdown-item {
+            color: white;
+          }
+          
+          select {
+            height: 100% !important;
+          }
+          
+          
+    </style>
+</head>
+
+<body class="text-center" style="border-style: none;border-color: rgba(109,182,255,0);width: 100vw;">
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3" style="border-color: rgba(44,62,80,0);">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span style="background: rgba(5,130,255,0);border-style: none;border-color: rgb(255,255,255);"><span style="color: rgb(212, 212, 212); background-color: rgb(30, 30, 30);">वैद्यAKSHAR</span><br></span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-5" style="border-color: rgba(33,37,41,0);">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#" style="border-color: rgb(255,255,255);">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="border-color: rgb(255,255,255);">Sign-Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="background: #c5c5c5;margin-top: 2%;margin-left: 10%;margin-right: 10%;padding-top: 3%;padding-bottom: 3%;border: 3px solid rgba(33,37,41,0);border-radius: 5px;margin-bottom: 2%;">
+        <h1 style="font-size: 25px;text-align: center;">Upload your prescription and know your medicines on a click !</h1>
+        <div class="flex-column" style="margin-left: 3%;margin-right: 3%;border-style: dashed;border-color: rgb(89,93,96);margin-top: 1%;padding-top: 2%;padding-bottom: 2%;background: #ffffff;">
+            <h1 style="font-size: 35px;">Upload your file here</h1>
+            <form encType="multipart/form-data" class="d-xxl-flex justify-content-center justify-content-xxl-center align-items-xxl-center" method="post" target="_self" style="padding-left: 10px;padding-right: 10px;">
+              {% csrf_token %}
+              <input class="form-control" name="file" type="file" style="height: 50px;width: 50%;">
+              <input class="form-control form-control-lg" name="location" type="text" placeholder="Enter location" style="height: 50px;width: 50%;">
+              <select class="form-select" name="language" style="width: 50%;height: 50px !important;">
+                    <option value="English" selected="">English</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Assamese">Assamese</option>
+                    <option value="Dogri">Dogri</option>
+                    <option value="Kannada">Kannada</option>
+                    <option value="Kashmiri">Kashmiri</option>
+                    <option value="Malayalam">Malayalam</option>
+                    <option value="Nepali">Nepali</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="Sindhi">Sindhi</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Telugu">Telugu</option>
+                </select><button class="btn btn-primary" type="submit" style="height: 50px;background: rgb(93,99,109);">Button</button></form>
+        </div>
+        <h1 class="text-uppercase" style="font-size: 25px;text-align: center;margin-top: 3%;">Your medicines are identified successfully !</h1><button class="btn btn-primary" type="button" style="font-size: 25px;text-align: center;background: rgba(0,102,255,0.79);border-style: none;border-color: rgb(194,16,16);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
+                <path d="M11 5.88218V19.2402C11 20.2121 10.2121 21 9.24018 21C8.49646 21 7.83302 20.5325 7.58288 19.8321L5.43647 13.6829M18 13C19.6569 13 21 11.6569 21 10C21 8.34315 19.6569 7 18 7M5.43647 13.6829C4.0043 13.0741 3 11.6543 3 10C3 7.79086 4.79086 6 6.99999 6H8.83208C12.9327 6 16.4569 4.7659 18 3L18 17C16.4569 15.2341 12.9327 14 8.83208 14L6.99998 14C6.44518 14 5.91677 13.887 5.43647 13.6829Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg></button>
+        <div class="container" style="padding-left: 4%;padding-right: 4%;">
+            <div class="row" style="margin-top: 5%;">
+                <div class="col-md-4" style="background: #ffffff;padding-top: 10px;">
+                    <h4 style="padding-top: 1%;">Prescribed Medicines</h4>
+                    <ul>
+                      {{ Prescriptions }}
+                    </ul>
+                </div>
+                <div class="col-md-4" style="background: #ffffff;padding-top: 10px;">
+                    <h4 style="padding-top: 1%;">Related Ayurvedic Medicines</h4>
+                    <ul>
+                        {{ Ayurvedic }}
+                    </ul>
+                </div>
+                <div class="col-md-4" style="background: #ffffff;padding-top: 10px;">
+                    <h4 style="padding-top: 1%;">Diseases</h4>
+                    <ul>
+                        {{ Diseases }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center bg-dark">
+        <div class="container text-white py-4 py-lg-5">
+            <p class="text-muted mb-0">Copyright © 2022 Brand</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
